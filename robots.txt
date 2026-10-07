@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pixeldoc-974.netlify.app/sitemap.xml
