@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page introuvable — PixelDoc</title>
+<meta name="description" content="Cette page n'existe pas ou a été déplacée. Retrouvez les services et tarifs de PixelDoc, réparation informatique à Saint-Denis (La Réunion)." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0f1117" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .nf{min-height:56vh;display:flex;align-items:center;padding:60px 24px;}
+  .nf .container{max-width:720px;text-align:center;}
+  .nf .code{font-family:var(--display);font-size:clamp(84px,18vw,160px);font-weight:800;line-height:1;background:linear-gradient(120deg,var(--accent),var(--accent4));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .nf h1{font-size:clamp(26px,5vw,40px);margin:8px 0 14px;}
+  .nf p{color:var(--dim);margin-bottom:26px;}
+  .nf .hero-cta{justify-content:center;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="/" aria-label="PixelDoc — accueil">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="/index.html#services">Services</a>
+      <a href="/index.html#tarifs">Tarifs</a>
+      <a href="/index.html#catalogue">Reconditionné</a>
+      <a href="/index.html#faq">FAQ</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/contact.html#devis" class="nav-cta">Devis gratuit</a>
+    </nav>
+    <button class="burger" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false" onclick="document.getElementById('navLinks').classList.toggle('open');this.setAttribute('aria-expanded',document.getElementById('navLinks').classList.contains('open'))">☰</button>
+  </div>
+</header>
+<main id="main">
+<section class="nf"><div class="container">
+  <div class="code" aria-hidden="true">404</div>
+  <h1>Oups, cette page n'existe pas.</h1>
+  <p>Le lien est peut-être périmé ou mal écrit. Pas de panique : ton PC, lui, a encore une chance d'être réparé.</p>
+  <div class="hero-cta">
+    <a href="/" class="btn btn-primary">← Retour à l'accueil</a>
+    <a href="/contact.html" class="btn btn-ghost">Demander un devis</a>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></div>
+      <p>Atelier indépendant de réparation informatique à Saint-Denis (97400 - La Réunion). Diagnostic offert si réparation acceptée. PC reconditionnés garantis. Sur rendez-vous.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><a href="/index.html#services">Diagnostic</a><a href="/index.html#services">Réparation</a><a href="/index.html#services">Récupération données</a><a href="/index.html#services">Maintenance</a><a href="/index.html#services">Formation</a></div>
+    <div class="footer-col"><h4>Boutique</h4><a href="/index.html#catalogue">PC bureautique</a><a href="/index.html#catalogue">PC multimédia</a><a href="/index.html#catalogue">PC gaming</a><a href="/index.html#catalogue">PC portables</a></div>
+    <div class="footer-col"><h4>Infos</h4><a href="/index.html#tarifs">Tarifs HT</a><a href="/index.html#faq">FAQ</a><a href="/contact.html">Contact</a><a href="https://frederic-pixeldoc.github.io/pixeldoc-atelier/" target="_blank" rel="noopener">🔒 Espace atelier</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© <span id="yr">2026</span> PixelDoc — Frédéric Bartholo · Saint-Denis 974 · SIRET en cours d'immatriculation · TVA non applicable, art. 293 B du CGI</div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/index.html#legal-cgv">CGV</a>
+      <a href="/index.html#legal-garantie">Garantie</a>
+      <a href="/index.html#legal-rgpd">RGPD</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
