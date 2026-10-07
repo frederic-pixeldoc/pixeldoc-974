@@ -208,3 +208,9 @@
   .breadcrumb{font-size:13px;color:var(--dim);margin-bottom:16px;}
   .breadcrumb a{color:var(--accent);}
   .map-note{margin-top:20px;font-size:13px;color:var(--dim);}
+
+  /* ── Logo ── */
+  .brand::before{content:'';display:inline-block;width:42px;height:42px;margin-right:8px;vertical-align:-14px;background:url(logo-icon.svg) center/contain no-repeat;}
+  .brand small{padding-left:50px;margin-top:-2px;}
+  .nav-links a.nav-cta{color:var(--bg);}
+  .nav-links a.nav-cta:hover{color:var(--bg);}
