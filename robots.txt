@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://frederic-pixeldoc.github.io/pixeldoc-974/sitemap.xml
+Sitemap: https://pixeldoc-974.netlify.app/sitemap.xml
