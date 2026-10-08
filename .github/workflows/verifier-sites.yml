@@ -1,0 +1,36 @@
+name: Vérifier les sites PixelDoc
+
+# Chaque jour, vérifie que chaque adresse affiche bien SON site (et pas celui d'un autre projet Netlify).
+# En cas de problème, GitHub envoie un e-mail au propriétaire du dépôt.
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Contrôle des 5 sites
+        run: |
+          fail=0
+          # adresse | texte attendu dans le <title>
+          while IFS='|' read -r url attendu; do
+            code=$(curl -s -o /tmp/p.html -w '%{http_code}' -m 30 -H 'Cache-Control: no-cache' "$url")
+            titre=$(grep -o '<title>[^<]*' /tmp/p.html | head -1 | sed 's/<title>//')
+            if [ "$code" != "200" ]; then echo "::error::$url répond $code"; fail=1
+            elif ! echo "$titre" | grep -qF "$attendu"; then echo "::error::$url affiche « $titre » au lieu de « $attendu… » : mauvais dépôt relié dans Netlify ?"; fail=1
+            else echo "OK  $url — $titre"; fi
+          done <<'LISTE'
+          https://pixeldoc-974.netlify.app/|PixelDoc — Réparation PC
+          https://pixeldoc-atelier.netlify.app/|PixelDoc — Atelier
+          https://stock-reconditionner.netlify.app/|PixelDoc — Stock
+          https://calculateur-pieces.netlify.app/|PixelDoc — Calculateur
+          https://simulateur-de-prix.netlify.app/|PixelDoc — Simulateur
+          LISTE
+          # pages indispensables de la vitrine
+          for p in contact.html mentions-legales.html style.css; do
+            c=$(curl -s -o /dev/null -w '%{http_code}' -m 30 "https://pixeldoc-974.netlify.app/$p")
+            if [ "$c" = "200" ]; then echo "OK  /$p"; else echo "::error::/$p répond $c"; fail=1; fi
+          done
+          exit $fail
