@@ -7,6 +7,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    # À RETIRER À L'OUVERTURE : site non indexable tant que PixelDoc n'est pas ouvert (voir OUVERTURE.md)
+    X-Robots-Tag = "noindex, nofollow"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"

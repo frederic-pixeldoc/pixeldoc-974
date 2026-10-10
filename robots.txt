@@ -1,3 +1,5 @@
+# À RETIRER À L'OUVERTURE : site non ouvert, aucune indexation (voir OUVERTURE.md).
+# À l'ouverture : remplacer par "Allow: /" et rétablir la ligne Sitemap ci-dessous.
+#   Sitemap: https://pixeldoc-974.netlify.app/sitemap.xml
 User-agent: *
-Allow: /
-Sitemap: https://pixeldoc-974.netlify.app/sitemap.xml
+Disallow: /
