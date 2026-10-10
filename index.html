@@ -17,17 +17,21 @@
 <meta property="og:image:height" content="559" />
 <meta property="og:image:alt" content="PixelDoc — réparation et maintenance informatique et smartphone, à votre service à La Réunion" />
 <meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="https://pixeldoc-974.netlify.app/" />
+<meta property="og:site_name" content="PixelDoc" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
 
 <!-- ═══ Schema.org — LocalBusiness ═══ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ComputerStore"],
+  "@id": "https://pixeldoc-974.netlify.app/#entreprise",
   "name": "PixelDoc",
   "description": "Atelier de réparation informatique à Saint-Denis (La Réunion). Diagnostic offert si réparation acceptée. Dépannage à domicile et en atelier. PC reconditionnés garantis 6 mois + garantie légale 2 ans.",
   "url": "https://pixeldoc-974.netlify.app/",
@@ -47,15 +51,16 @@
     "latitude": -20.8823,
     "longitude": 55.4504
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": -20.8823,
-      "longitude": 55.4504
-    },
-    "geoRadius": "30000"
-  },
+  "areaServed": [
+    {"@type": "City", "name": "Saint-Denis"},
+    {"@type": "City", "name": "Sainte-Marie"},
+    {"@type": "City", "name": "Sainte-Suzanne"},
+    {"@type": "City", "name": "La Possession"},
+    {"@type": "City", "name": "Le Port"},
+    {"@type": "City", "name": "Saint-André"}
+  ],
+  "paymentAccepted": "Espèces, virement bancaire, carte bancaire",
+  "currenciesAccepted": "EUR",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -201,6 +206,22 @@
         "@type": "Answer",
         "text": "Oui, sur 3 zones autour de Saint-Denis (La Réunion) : 0 à 15 km (60 €), 15 à 30 km (80 €), au-delà sur devis. Chaque forfait inclut 1h de main d'œuvre sur place."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il prendre rendez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, l'atelier de Saint-Denis reçoit sur rendez-vous du lundi au samedi. Appelez, écrivez sur WhatsApp ou remplissez le formulaire de devis : réponse sous 24 h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si je refuse le devis de réparation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le diagnostic n'est offert que si la réparation est acceptée. Si vous refusez le devis, le diagnostic reste dû (35 € en atelier). Aucune réparation n'est engagée sans votre accord."
+      }
     }
   ]
 }
@@ -211,7 +232,7 @@
 
 <header>
   <div class="nav-wrap">
-    <div class="brand">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></div>
+    <a class="brand" href="index.html">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></a>
     <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
       <a href="#services">Services</a>
       <a href="#tarifs">Tarifs</a>
@@ -236,8 +257,9 @@
       <h1>Ton PC <span>réparé vite,</span> bien et sans surprise.</h1>
       <p class="subtitle">Atelier de réparation informatique à Saint-Denis (La Réunion). Diagnostic offert si tu acceptes la réparation. Dépannage à domicile et atelier. PC reconditionnés garantis 6 mois + garantie légale 2 ans.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Demander un devis →</a>
-        <a href="#tarifs" class="btn btn-ghost">Voir les tarifs</a>
+        <a href="tel:+262693048762" class="btn btn-primary">📞 Appeler le 06 93 04 87 62</a>
+        <a href="https://wa.me/262693048762?text=Bonjour%20PixelDoc,%20je%20souhaite%20un%20devis%20pour%20..." class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a href="#contact" class="btn btn-ghost">Devis gratuit →</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><div class="num">35€</div><div class="lbl">Diagnostic atelier</div></div>
@@ -325,12 +347,34 @@
       <p class="subtitle">Machines testées, nettoyées et garanties. Windows 11 préinstallé sur les machines compatibles (processeur de 8e génération ou plus), prêtes à l'emploi.</p>
     </div>
     <div class="recon-grid">
-      <div class="recon-card"><div class="recon-img">💻<span class="recon-tag">Bureautique</span></div><div class="recon-body"><h3>PC Bureautique entrée</h3><div class="specs">i3 6e/7e gén · 8 Go RAM · SSD 256 Go · Windows adapté à la machine<br>Idéal navigation, mail, traitement texte</div><div class="recon-foot"><div class="recon-price">250 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary" style="padding:8px 14px;font-size:13px">Voir</a></div></div></div>
-      <div class="recon-card"><div class="recon-img">💻<span class="recon-tag">Bureautique pro</span></div><div class="recon-body"><h3>PC Bureautique pro</h3><div class="specs">i5 8e gén+ · 16 Go RAM · SSD 512 Go · Win 11 Pro<br>Multitâche, télétravail, comptabilité</div><div class="recon-foot"><div class="recon-price">420 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary" style="padding:8px 14px;font-size:13px">Voir</a></div></div></div>
-      <div class="recon-card"><div class="recon-img">🎮<span class="recon-tag">Multimédia</span></div><div class="recon-body"><h3>PC Multimédia + GPU</h3><div class="specs">i5 8e+ · 16 Go RAM · SSD 512 Go · GTX 1050/1650<br>Photo, montage léger, jeux casual</div><div class="recon-foot"><div class="recon-price">640 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary" style="padding:8px 14px;font-size:13px">Voir</a></div></div></div>
-      <div class="recon-card"><div class="recon-img">🎮<span class="recon-tag">Gaming</span></div><div class="recon-body"><h3>PC Gaming entrée</h3><div class="specs">i5 9e+ · 16 Go RAM · SSD 512 Go · GTX 1660 / RX 580<br>Jeux récents en 1080p qualité haute</div><div class="recon-foot"><div class="recon-price">780 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary" style="padding:8px 14px;font-size:13px">Voir</a></div></div></div>
-      <div class="recon-card"><div class="recon-img">💼<span class="recon-tag">Portable</span></div><div class="recon-body"><h3>Portable bureau pro</h3><div class="specs">i5 8e+ · 16 Go RAM · SSD 512 Go · 15" FHD · Win 11<br>Mobilité pro, batterie ≥ 70%</div><div class="recon-foot"><div class="recon-price">480 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary" style="padding:8px 14px;font-size:13px">Voir</a></div></div></div>
-      <div class="recon-card"><div class="recon-img">🎮<span class="recon-tag">Portable Gaming</span></div><div class="recon-body"><h3>Portable gaming</h3><div class="specs">i7 + GTX 1650/1660Ti · 16 Go · SSD 512 Go<br>Gaming nomade, 15-17"</div><div class="recon-foot"><div class="recon-price">750 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary" style="padding:8px 14px;font-size:13px">Voir</a></div></div></div>
+      <div class="recon-card"><div class="recon-img">💻<span class="recon-tag">Bureautique</span></div><div class="recon-body"><h3>PC Bureautique entrée</h3><div class="specs">i3 6e/7e gén · 8 Go RAM · SSD 256 Go · Windows adapté à la machine<br>Idéal navigation, mail, traitement texte</div><div class="recon-foot"><div class="recon-price">250 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary btn-sm" aria-label="Me renseigner sur : PC Bureautique entrée">Me renseigner</a></div></div></div>
+      <div class="recon-card"><div class="recon-img">💻<span class="recon-tag">Bureautique pro</span></div><div class="recon-body"><h3>PC Bureautique pro</h3><div class="specs">i5 8e gén+ · 16 Go RAM · SSD 512 Go · Win 11 Pro<br>Multitâche, télétravail, comptabilité</div><div class="recon-foot"><div class="recon-price">420 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary btn-sm" aria-label="Me renseigner sur : PC Bureautique pro">Me renseigner</a></div></div></div>
+      <div class="recon-card"><div class="recon-img">🎮<span class="recon-tag">Multimédia</span></div><div class="recon-body"><h3>PC Multimédia + GPU</h3><div class="specs">i5 8e+ · 16 Go RAM · SSD 512 Go · GTX 1050/1650<br>Photo, montage léger, jeux casual</div><div class="recon-foot"><div class="recon-price">640 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary btn-sm" aria-label="Me renseigner sur : PC Multimédia + GPU">Me renseigner</a></div></div></div>
+      <div class="recon-card"><div class="recon-img">🎮<span class="recon-tag">Gaming</span></div><div class="recon-body"><h3>PC Gaming entrée</h3><div class="specs">i5 9e+ · 16 Go RAM · SSD 512 Go · GTX 1660 / RX 580<br>Jeux récents en 1080p qualité haute</div><div class="recon-foot"><div class="recon-price">780 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary btn-sm" aria-label="Me renseigner sur : PC Gaming entrée">Me renseigner</a></div></div></div>
+      <div class="recon-card"><div class="recon-img">💼<span class="recon-tag">Portable</span></div><div class="recon-body"><h3>Portable bureau pro</h3><div class="specs">i5 8e+ · 16 Go RAM · SSD 512 Go · 15" FHD · Win 11<br>Mobilité pro, batterie ≥ 70%</div><div class="recon-foot"><div class="recon-price">480 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary btn-sm" aria-label="Me renseigner sur : Portable bureau pro">Me renseigner</a></div></div></div>
+      <div class="recon-card"><div class="recon-img">🎮<span class="recon-tag">Portable Gaming</span></div><div class="recon-body"><h3>Portable gaming</h3><div class="specs">i7 + GTX 1650/1660Ti · 16 Go · SSD 512 Go<br>Gaming nomade, 15-17"</div><div class="recon-foot"><div class="recon-price">750 €<small>TTC, garantie 6 mois + 2 ans légale</small></div><a href="#contact" class="btn btn-primary btn-sm" aria-label="Me renseigner sur : Portable gaming">Me renseigner</a></div></div></div>
+    </div>
+    <div class="recon-info">
+      <div>
+        <h3>Tests et préparation</h3>
+        <ul>
+          <li>Machine <strong>testée pièce par pièce</strong> avant mise en vente</li>
+          <li><strong>Nettoyage en profondeur</strong> (poussière, ventilation)</li>
+          <li><strong>SSD neuf</strong> et système réinstallé proprement</li>
+          <li><strong>Windows 11</strong> sur les machines compatibles</li>
+          <li>Portables : <strong>batterie ≥ 70 %</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Garantie et service</h3>
+        <ul>
+          <li><strong>6 mois</strong> garantie commerciale, pièces et main d'œuvre</li>
+          <li><strong>2 ans</strong> de garantie légale de conformité en plus</li>
+          <li>Retour atelier gratuit, diagnostic offert sous garantie</li>
+          <li>Prise en charge sous <strong>5 jours ouvrés</strong></li>
+          <li>Conseil honnête : on t'oriente vers la machine adaptée à ton usage</li>
+        </ul>
+      </div>
     </div>
     <div class="recon-warranty">🛡️ <span><strong>Toutes nos machines</strong> bénéficient de la garantie commerciale PixelDoc 6 mois (pièces & main d'œuvre) en plus de la garantie légale de conformité 2 ans (art. L217-3 C. conso). En cas de panne sous garantie, retour atelier gratuit, diagnostic offert, réparation sous 5 jours ouvrés.</span></div>
   </div>
@@ -359,13 +403,15 @@
       <h2>Tout ce que tu veux <span>savoir</span></h2>
     </div>
     <div style="max-width:800px;margin:40px auto 0">
-      <div class="faq-item"><div class="faq-q">Combien coûte un diagnostic ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">35 € en atelier (offert si tu acceptes la réparation derrière) ou 60 € à 100 € à domicile selon la zone (forfait inclut 1h de main d'œuvre).</div></div></div>
-      <div class="faq-item"><div class="faq-q">Mes données seront-elles préservées ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">On te recommande TOUJOURS de faire une sauvegarde avant intervention. Pour les pannes lourdes, je propose une prestation de sauvegarde dédiée (40 €). Pour la récupération sur disque endommagé, devis selon état.</div></div></div>
-      <div class="faq-item"><div class="faq-q">Quel est le délai de réparation ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">48 à 72h en moyenne, selon la disponibilité des pièces. Pour les commandes spécifiques, le délai d'approvisionnement t'est annoncé sur le devis.</div></div></div>
-      <div class="faq-item"><div class="faq-q">Quelle garantie sur les réparations ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">Garantie main d'œuvre PixelDoc : 3 mois sur récidive. Pièces neuves : garantie constructeur (2 ans en général). Sur les PC reconditionnés : garantie commerciale 6 mois pièces et MO + garantie légale de conformité 2 ans (art. L217-3 C. conso).</div></div></div>
-      <div class="faq-item"><div class="faq-q">Comment payer ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">Espèces, virement bancaire, CB (selon dispositif disponible). Paiement à la restitution du matériel. Acompte 30 % demandé pour les commandes de pièces &gt; 100 €.</div></div></div>
-      <div class="faq-item"><div class="faq-q">PC reconditionné = PC d'occasion ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">Pas tout à fait : un PC reconditionné est testé pièce par pièce, nettoyé en profondeur, équipé d'un SSD neuf, mis à jour Windows 11 et garanti. C'est l'alternative durable et économique au PC neuf.</div></div></div>
-      <div class="faq-item"><div class="faq-q">Vous intervenez à domicile ? <span class="arr">▼</span></div><div class="faq-a"><div class="faq-a-inner">Oui, sur 3 zones autour de Saint-Denis : 0-15 km (60 €), 15-30 km (80 €), au-delà devis. Le forfait inclut 1h de main d'œuvre sur place.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">Combien coûte un diagnostic ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div class="faq-a-inner">35 € en atelier (offert si tu acceptes la réparation derrière) ou 60 € à 100 € à domicile selon la zone (forfait inclut 1h de main d'œuvre).</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">Mes données seront-elles préservées ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div class="faq-a-inner">On te recommande TOUJOURS de faire une sauvegarde avant intervention. Pour les pannes lourdes, je propose une prestation de sauvegarde dédiée (40 €). Pour la récupération sur disque endommagé, devis selon état.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">Quel est le délai de réparation ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div class="faq-a-inner">48 à 72h en moyenne, selon la disponibilité des pièces. Pour les commandes spécifiques, le délai d'approvisionnement t'est annoncé sur le devis.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">Quelle garantie sur les réparations ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div class="faq-a-inner">Garantie main d'œuvre PixelDoc : 3 mois sur récidive. Pièces neuves : garantie constructeur (2 ans en général). Sur les PC reconditionnés : garantie commerciale 6 mois pièces et MO + garantie légale de conformité 2 ans (art. L217-3 C. conso).</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">Comment payer ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div class="faq-a-inner">Espèces, virement bancaire, CB (selon dispositif disponible). Paiement à la restitution du matériel. Acompte 30 % demandé pour les commandes de pièces &gt; 100 €.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">PC reconditionné = PC d'occasion ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div class="faq-a-inner">Pas tout à fait : un PC reconditionné est testé pièce par pièce, nettoyé en profondeur, équipé d'un SSD neuf, mis à jour Windows 11 et garanti. C'est l'alternative durable et économique au PC neuf.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">Vous intervenez à domicile ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div class="faq-a-inner">Oui, sur 3 zones autour de Saint-Denis : 0-15 km (60 €), 15-30 km (80 €), au-delà devis. Le forfait inclut 1h de main d'œuvre sur place.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q8" aria-expanded="false" aria-controls="faq-a8">Faut-il prendre rendez-vous ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div class="faq-a-inner">Oui, l'atelier reçoit sur rendez-vous du lundi au samedi. Appelle, écris sur WhatsApp ou remplis le formulaire de devis : réponse sous 24h.</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button" id="faq-q9" aria-expanded="false" aria-controls="faq-a9">Et si je refuse le devis de réparation ? <span class="arr" aria-hidden="true">▼</span></button><div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div class="faq-a-inner">Le diagnostic n'est offert que si tu acceptes la réparation : sinon il reste dû (35 € en atelier). Aucune réparation n'est lancée sans ton accord.</div></div></div>
     </div>
   </div>
 </section>
@@ -388,7 +434,7 @@
         <h3 style="margin-bottom:18px">Demande de devis</h3>
         <form name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitForm(event)">
           <input type="hidden" name="form-name" value="devis">
-          <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
+          <p class="hp" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-grid">
             <div class="fg"><label for="f_prenom">Prénom *</label><input type="text" name="prenom" autocomplete="given-name" id="f_prenom" required></div>
             <div class="fg"><label for="f_nom">Nom *</label><input type="text" name="nom" autocomplete="family-name" id="f_nom" required></div>
@@ -409,8 +455,9 @@
             <div class="fg full"><label for="f_message">Détail de ta demande *</label><textarea name="message" id="f_message" placeholder="Décris ton problème : modèle d'appareil, panne constatée, ce que tu attends..." required></textarea></div>
           </div>
           <button type="submit" class="btn btn-primary">📨 Envoyer la demande</button>
-          <div class="form-success" id="formOk">✅ Merci ! Ta demande a été envoyée. Tu recevras un devis sous 24h.</div>
-          <div class="form-error" id="formErr">❌ Erreur lors de l'envoi. Contacte directement par WhatsApp, par téléphone ou par e-mail : <a href="mailto:fredericbartholo@yahoo.fr" style="color:inherit;text-decoration:underline">fredericbartholo@yahoo.fr</a>.</div>
+          <p class="form-note">Ces informations ne servent qu'à répondre à ta demande. <a href="#" onclick="openLegalModal('rgpd');return false">Politique de confidentialité</a>.</p>
+          <div class="form-success" id="formOk" role="status">✅ Merci ! Ta demande a été envoyée. Tu recevras un devis sous 24h.</div>
+          <div class="form-error" id="formErr" role="alert">❌ Erreur lors de l'envoi. Contacte directement par WhatsApp, par téléphone ou par e-mail : <a href="mailto:fredericbartholo@yahoo.fr" style="color:inherit;text-decoration:underline">fredericbartholo@yahoo.fr</a>.</div>
         </form>
       </div>
     </div>
@@ -425,9 +472,9 @@
       <div class="brand">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></div>
       <p>Atelier indépendant de réparation informatique à Saint-Denis (97400 - La Réunion). Diagnostic offert si réparation acceptée. PC reconditionnés garantis. Sur rendez-vous.</p>
     </div>
-    <div class="footer-col"><h4>Services</h4><a href="#services">Diagnostic</a><a href="#services">Réparation</a><a href="#services">Récupération données</a><a href="#services">Maintenance</a><a href="#services">Formation</a></div>
-    <div class="footer-col"><h4>Boutique</h4><a href="#catalogue">PC bureautique</a><a href="#catalogue">PC multimédia</a><a href="#catalogue">PC gaming</a><a href="#catalogue">PC portables</a></div>
-    <div class="footer-col"><h4>Infos</h4><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a href="contact.html">Contact</a><a href="https://pixeldoc-atelier.netlify.app/" target="_blank" rel="noopener">🔒 Espace atelier</a></div>
+    <div class="footer-col"><p class="ft">Services</p><a href="#services">Diagnostic</a><a href="#services">Réparation</a><a href="#services">Récupération données</a><a href="#services">Maintenance</a><a href="#services">Formation</a></div>
+    <div class="footer-col"><p class="ft">Boutique</p><a href="#catalogue">PC bureautique</a><a href="#catalogue">PC multimédia</a><a href="#catalogue">PC gaming</a><a href="#catalogue">PC portables</a></div>
+    <div class="footer-col"><p class="ft">Infos</p><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a href="contact.html">Contact</a><a href="https://pixeldoc-atelier.netlify.app/" target="_blank" rel="noopener">🔒 Espace atelier</a></div>
   </div>
   <div class="footer-bottom">
     <div>© <span id="yr">2026</span> PixelDoc — Frédéric Bartholo · Saint-Denis 974 · SIRET en cours d'immatriculation · TVA non applicable, art. 293 B du CGI</div>
@@ -440,6 +487,12 @@
   </div>
 </footer>
 
+<nav class="cta-bar" aria-label="Contacter PixelDoc">
+  <a href="tel:+262693048762">📞 Appeler</a>
+  <a class="wa" href="https://wa.me/262693048762?text=Bonjour%20PixelDoc,%20je%20souhaite%20un%20devis%20pour%20..." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="main" href="#contact">Devis</a>
+</nav>
+
 <a href="https://wa.me/262693048762?text=Bonjour%20PixelDoc,%20je%20souhaite%20un%20devis%20pour%20..." class="wa-float" target="_blank" rel="noopener" aria-label="Contact WhatsApp">
   <span class="wa-tip">Devis WhatsApp</span>
   💬
@@ -447,7 +500,7 @@
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
+document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => { const o = q.parentElement.classList.toggle('open'); q.setAttribute('aria-expanded', o); }));
 document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
 function submitForm(e){
   e.preventDefault();
@@ -461,28 +514,6 @@ function submitForm(e){
 
 /* ── Modals légaux ──────────────────────────────────────────── */
 const LEGAL_DOCS = {
-  mentions:{
-    titre:'Mentions légales',
-    html:`<h2>Mentions légales</h2>
-<div class="lm-info">
-  <strong>Frédéric Bartholo</strong> — Entrepreneur individuel · Micro-entreprise<br>
-  Saint-Denis (97400) — La Réunion<br>
-  Tél&nbsp;: <a href="tel:+262693048762">+262&nbsp;6&nbsp;93&nbsp;04&nbsp;87&nbsp;62</a>&nbsp; · &nbsp;<a href="mailto:fredericbartholo@yahoo.fr">fredericbartholo@yahoo.fr</a><br>
-  SIRET&nbsp;: en cours d'immatriculation · TVA non applicable, art.&nbsp;293&nbsp;B du CGI<br>
-  Directeur de la publication&nbsp;: Frédéric Bartholo
-</div>
-<h3>Hébergement</h3>
-<p>Site hébergé par <strong>Netlify, Inc.</strong> — 512 2nd Street, Suite 200, San Francisco, CA 94107, USA — <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a>.</p>
-<h3>Activités</h3>
-<p>Réparation et maintenance d'ordinateurs, diagnostic et dépannage à domicile ou en atelier, vente de matériel reconditionné, conseil et formation informatique.</p>
-<h3>Propriété intellectuelle</h3>
-<p>Tout le contenu du site (textes, logo, visuels) est la propriété de Frédéric Bartholo. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable (art.&nbsp;L335-2 CPI).</p>
-<h3>Données personnelles et cookies</h3>
-<p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Les polices de caractères sont chargées depuis Google Fonts : votre adresse IP est alors transmise à Google. Les informations saisies dans le formulaire de devis ne servent qu'à répondre à votre demande.</p>
-<p>Voir la <a href="#" onclick="openLegalModal('rgpd');return false">Politique de confidentialité (RGPD)</a>.</p>
-<h3>Médiation</h3>
-<p>Conformément à l'art.&nbsp;L611-1 du Code de la consommation, tout litige non résolu amiablement peut être soumis à un médiateur de la consommation. Coordonnées du médiateur communiquées lors de l'immatriculation.</p>`
-  },
   cgv:{
     titre:'Conditions Générales de Vente',
     html:`<h2>Conditions Générales de Vente</h2>
@@ -581,23 +612,35 @@ Réclamation auprès de la <strong>CNIL</strong>&nbsp;: <a href="https://www.cni
   }
 };
 
+let lmReturn = null;
 function openLegalModal(key) {
   const doc = LEGAL_DOCS[key]; if (!doc) return;
+  lmReturn = document.activeElement;
   document.getElementById('lmTitle').textContent = doc.titre;
   document.getElementById('lmBody').innerHTML = doc.html;
   document.getElementById('legalOv').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.querySelector('.lm-close').focus();
 }
 function closeLegalModal() {
   document.getElementById('legalOv').classList.remove('open');
   document.body.style.overflow = '';
+  if (lmReturn && lmReturn.focus) lmReturn.focus();
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLegalModal(); });
+document.addEventListener('keydown', e => {
+  const ov = document.getElementById('legalOv');
+  if (!ov.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLegalModal();
+  if (e.key === 'Tab') { const f = [...ov.querySelectorAll('a[href],button')]; if (!f.length) return; const first = f[0], last = f[f.length-1];
+    if (!ov.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }
+});
 if (location.hash.startsWith('#legal-')) openLegalModal(location.hash.slice(7));
 </script>
 
 <!-- ══ Modals légaux ══ -->
-<div class="legal-ov" id="legalOv" onclick="if(event.target===this)closeLegalModal()">
+<div class="legal-ov" id="legalOv" role="dialog" aria-modal="true" aria-labelledby="lmTitle" onclick="if(event.target===this)closeLegalModal()">
   <div class="legal-modal">
     <div class="lm-head">
       <h3 id="lmTitle">—</h3>
