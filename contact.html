@@ -21,14 +21,21 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap"></noscript>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://pixeldoc-974.netlify.app/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://pixeldoc-974.netlify.app/contact.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ContactPage","name":"Contact et devis gratuit — PixelDoc","url":"https://pixeldoc-974.netlify.app/contact.html","about":{"@id":"https://pixeldoc-974.netlify.app/#entreprise"}}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Aller au contenu</a>
 <header>
   <div class="nav-wrap">
-    <a class="brand" href="index.html" aria-label="PixelDoc — accueil">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></a>
+    <a class="brand" href="index.html">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></a>
     <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
       <a href="index.html#services">Services</a>
       <a href="index.html#tarifs">Tarifs</a>
@@ -59,7 +66,7 @@
         <h2 style="font-size:22px;margin-bottom:18px">Demande de devis</h2>
         <form id="devis" name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitForm(event)">
           <input type="hidden" name="form-name" value="devis">
-          <p style="display:none"><label>Ne pas remplir : <input name="bot-field"></label></p>
+          <p class="hp" aria-hidden="true"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-grid">
             <div class="fg"><label for="f_prenom">Prénom *</label><input type="text" name="prenom" autocomplete="given-name" id="f_prenom" required></div>
             <div class="fg"><label for="f_nom">Nom *</label><input type="text" name="nom" autocomplete="family-name" id="f_nom" required></div>
@@ -80,13 +87,14 @@
             <div class="fg full"><label for="f_message">Détail de ta demande *</label><textarea name="message" id="f_message" placeholder="Décris ton problème : modèle d'appareil, panne constatée, ce que tu attends..." required></textarea></div>
           </div>
           <button type="submit" class="btn btn-primary">📨 Envoyer la demande</button>
-          <div class="form-success" id="formOk">✅ Merci ! Ta demande a été envoyée. Tu recevras un devis sous 24h.</div>
-          <div class="form-error" id="formErr">❌ Erreur lors de l'envoi. Contacte directement par WhatsApp, par téléphone ou par e-mail : <a href="mailto:fredericbartholo@yahoo.fr" style="color:inherit;text-decoration:underline">fredericbartholo@yahoo.fr</a>.</div>
+          <p class="form-note">Ces informations ne servent qu'à répondre à ta demande. <a href="index.html#legal-rgpd">Politique de confidentialité</a>.</p>
+          <div class="form-success" id="formOk" role="status">✅ Merci ! Ta demande a été envoyée. Tu recevras un devis sous 24h.</div>
+          <div class="form-error" id="formErr" role="alert">❌ Erreur lors de l'envoi. Contacte directement par WhatsApp, par téléphone ou par e-mail : <a href="mailto:fredericbartholo@yahoo.fr" style="color:inherit;text-decoration:underline">fredericbartholo@yahoo.fr</a>.</div>
         </form>
       </div>
     </div>
   </div>
-<p class="map-note">Atelier sur rendez-vous uniquement — merci de prévenir avant de passer. Voir aussi les <a href="mentions-legales.html" style="color:var(--accent)">mentions légales</a>.</p>
+<p class="map-note">Atelier sur rendez-vous uniquement — merci de prévenir avant de passer. Voir aussi les <a href="mentions-legales.html">mentions légales</a>.</p>
 </div></section>
 </main>
 
@@ -96,9 +104,9 @@
       <div class="brand">Pixel<span>Doc</span><small>Saint-Denis · La Réunion · 974</small></div>
       <p>Atelier indépendant de réparation informatique à Saint-Denis (97400 - La Réunion). Diagnostic offert si réparation acceptée. PC reconditionnés garantis. Sur rendez-vous.</p>
     </div>
-    <div class="footer-col"><h4>Services</h4><a href="index.html#services">Diagnostic</a><a href="index.html#services">Réparation</a><a href="index.html#services">Récupération données</a><a href="index.html#services">Maintenance</a><a href="index.html#services">Formation</a></div>
-    <div class="footer-col"><h4>Boutique</h4><a href="index.html#catalogue">PC bureautique</a><a href="index.html#catalogue">PC multimédia</a><a href="index.html#catalogue">PC gaming</a><a href="index.html#catalogue">PC portables</a></div>
-    <div class="footer-col"><h4>Infos</h4><a href="index.html#tarifs">Tarifs HT</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a><a href="https://frederic-pixeldoc.github.io/pixeldoc-atelier/" target="_blank" rel="noopener">🔒 Espace atelier</a></div>
+    <div class="footer-col"><p class="ft">Services</p><a href="index.html#services">Diagnostic</a><a href="index.html#services">Réparation</a><a href="index.html#services">Récupération données</a><a href="index.html#services">Maintenance</a><a href="index.html#services">Formation</a></div>
+    <div class="footer-col"><p class="ft">Boutique</p><a href="index.html#catalogue">PC bureautique</a><a href="index.html#catalogue">PC multimédia</a><a href="index.html#catalogue">PC gaming</a><a href="index.html#catalogue">PC portables</a></div>
+    <div class="footer-col"><p class="ft">Infos</p><a href="index.html#tarifs">Tarifs</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a><a href="https://frederic-pixeldoc.github.io/pixeldoc-atelier/" target="_blank" rel="noopener">🔒 Espace atelier</a></div>
   </div>
   <div class="footer-bottom">
     <div>© <span id="yr">2026</span> PixelDoc — Frédéric Bartholo · Saint-Denis 974 · SIRET en cours d'immatriculation · TVA non applicable, art. 293 B du CGI</div>
@@ -110,6 +118,11 @@
     </div>
   </div>
 </footer>
+<nav class="cta-bar" aria-label="Contacter PixelDoc">
+  <a href="tel:+262693048762">📞 Appeler</a>
+  <a class="wa" href="https://wa.me/262693048762?text=Bonjour%20PixelDoc,%20je%20souhaite%20un%20devis%20pour%20..." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="main" href="#devis">Devis</a>
+</nav>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
