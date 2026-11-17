@@ -1,3 +1,5 @@
+> **Note du 17/11/2026 :** la structure décrite ci-dessous (pages multiples, formulaire retiré) est remplacée par la vitrine candidate (une page, `config-site.json`/`tarifs.json`). Voir `MAINTENANCE.md`. Ce fichier est conservé comme historique.
+
 # Checklist d'ouverture de PixelDoc
 
 Tant que PixelDoc n'est pas ouvert, le site est en mode « ouverture prochaine » : bandeau, formulaire désactivé, textes au futur/conditionnel, site non indexable. Chaque élément à annuler est marqué dans le code par le commentaire **« À RETIRER À L'OUVERTURE »** (`grep -rn "RETIRER À L'OUVERTURE" .`).

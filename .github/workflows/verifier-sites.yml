@@ -29,8 +29,11 @@ jobs:
           https://simulateur-de-prix.netlify.app/|PixelDoc — Simulateur
           LISTE
           # pages indispensables de la vitrine
-          for p in contact.html mentions-legales.html style.css; do
+          for p in robots.txt sitemap.xml site.js donnees-site.js; do
             c=$(curl -s -o /dev/null -w '%{http_code}' -m 30 "https://pixeldoc-974.netlify.app/$p")
             if [ "$c" = "200" ]; then echo "OK  /$p"; else echo "::error::/$p répond $c"; fail=1; fi
           done
+          # garde-fous de la pré-ouverture
+          if curl -sI -m 30 https://pixeldoc-974.netlify.app/ | grep -qi 'x-robots-tag:.*noindex'; then echo "::error::pixeldoc-974 est en noindex"; fail=1; fi
+          if curl -s -m 30 https://pixeldoc-974.netlify.app/ | grep -q 'Atelier ouvert'; then echo "::error::pixeldoc-974 affiche « Atelier ouvert » (ancienne version ?)"; fail=1; fi
           exit $fail
