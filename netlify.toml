@@ -1,25 +1,13 @@
-# Builds Netlify suspendus (crédit épuisé) : le site est servi gratuitement par GitHub Pages.
-# Pour réactiver Netlify : supprimer le bloc [build] ci-dessous.
+# Builds Netlify suspendus : conserver ce bloc. Le site pixeldoc-974 est publie par depot manuel (CLI) ; un push ne doit pas le remplacer.
+# Pour reactiver les builds depuis GitHub : supprimer le bloc [build] ci-dessous (decision de F.).
 [build]
   ignore = "exit 0"
 
-# Configuration Netlify (ignorée par GitHub Pages)
 [[headers]]
   for = "/*"
   [headers.values]
-    # À RETIRER À L'OUVERTURE : site non indexable tant que PixelDoc n'est pas ouvert (voir OUVERTURE.md)
-    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-
-[[headers]]
-  for = "/style.css"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-  for = "/*.svg"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'"
