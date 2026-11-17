@@ -3,7 +3,7 @@
 ## Où est la vérité
 - **Production** : projet Netlify `pixeldoc-974`, publié **à la main** (CLI) ; builds GitHub suspendus par `[build] ignore = "exit 0"` dans `netlify.toml` : **ne pas retirer ce bloc sans décision de F.**
 - **Dépôt** : ce dépôt contient les fichiers publiés (`index.html`, `site.js`, `donnees-site.js`, `robots.txt`, `sitemap.xml`, `netlify.toml`). `index.html` et `donnees-site.js` sont **générés** à partir de `config-site.json` / `tarifs.json` de la candidate (Bureau de F., `PIXELDOC-CANDIDATE`) : ne pas les éditer à la main.
-- **Copie GitHub Pages** (`frederic-pixeldoc.github.io/pixeldoc-974`) : sert le même contenu ; la balise canonique de `index.html` pointe vers Netlify. Les anciennes adresses `contact.html` et `mentions-legales.html` redirigent vers l'accueil.
+- **Copie GitHub Pages** (`frederic-pixeldoc.github.io/pixeldoc-974`) : sert le même contenu ; la balise canonique de `index.html` pointe vers Netlify. `contact.html` redirige vers la section Contact de l'accueil ; `mentions-legales.html` affiche les mentions légales (même texte que la fenêtre « Mentions légales » de l'accueil : à garder synchronisé).
 
 ## Publier (GO de F. requis)
 1. Régénérer et tester dans la candidate (`node vitrine/appliquer-tarifs.js`, `node test_vitrine.js`).
